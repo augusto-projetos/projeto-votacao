@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $_SESSION['cpf'] = $cpf;
 
     // CPFs autorizados como administradores
-    $admins = ["128.170.116-51"];
+    $admins = ["000.000.000-00"]; // Adicione o CPF do Administrador aqui
     $_SESSION['admins'] = $admins;
 
     // Se for admin, vai direto para admin.php
