@@ -2,10 +2,8 @@
 session_start();
 require 'conexao.php';
 
-// Verificação de segurança
-$cpf = $_SESSION['cpf'] ?? null;
-$admins = $_SESSION['admins'] ?? [];
-if (!$cpf || !in_array($cpf, $admins)) {
+if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
+    // Se a sessão de admin não existir ou não for verdadeira, nega o acesso.
     header("Location: ../index.php");
     exit();
 }
@@ -28,7 +26,8 @@ if (!$cpf || !in_array($cpf, $admins)) {
         </header>
 
         <div class="admin-actions">
-            <a href="gerenciar_grupos.php" class="btn-add-grupo">Gerenciar Grupos</a>
+            <a href="gerenciar_grupos.php" class="btn-action">Gerenciar Grupos</a>
+            <a href="gerenciar_usuarios.php" class="btn-action btn-secondary">Gerenciar Usuários</a>
         </div>
 
         <main class="dashboard">

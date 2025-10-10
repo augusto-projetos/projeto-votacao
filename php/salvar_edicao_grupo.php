@@ -2,11 +2,10 @@
 session_start();
 require 'conexao.php';
 
-// Verificação de segurança, padrão para todas as páginas de admin
-$cpf = $_SESSION['cpf'] ?? null;
-$admins = $_SESSION['admins'] ?? [];
-if (!$cpf || !in_array($cpf, $admins)) {
-    die("Acesso negado.");
+if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
+    // Se a sessão de admin não existir ou não for verdadeira, nega o acesso.
+    header("Location: ../index.php");
+    exit();
 }
 
 // 1. VERIFICA SE O FORMULÁRIO FOI ENVIADO CORRETAMENTE

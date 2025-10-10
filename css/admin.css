@@ -38,16 +38,20 @@ body {
     font-style: italic;
 }
 
+/* --- ESTILOS DOS BOTÕES DE AÇÃO ATUALIZADOS --- */
+
 /* Container para os botões de ação */
 .admin-actions {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaçamento entre os botões */
     margin-bottom: 30px;
+    flex-wrap: wrap; /* Garante que os botões quebrem a linha em telas pequenas */
 }
 
-.btn-add-grupo {
+/* Estilo genérico para os botões de ação principais */
+.btn-action {
     display: inline-block;
-    background-color: #28a745;
-    color: white;
     padding: 12px 25px;
     border-radius: 8px;
     text-decoration: none;
@@ -55,12 +59,25 @@ body {
     font-size: 1.1rem;
     transition: background-color 0.3s, transform 0.2s;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: white;
+    background-color: #28a745; /* Verde como cor primária */
 }
 
-.btn-add-grupo:hover {
-    background-color: #218838;
-    transform: translateY(-2px);
+.btn-action:hover {
+    background-color: #218838; /* Verde mais escuro */
+    transform: translateY(-2px); /* Efeito de elevação */
 }
+
+/* Modificador para botões secundários */
+.btn-action.btn-secondary {
+    background-color: #007bff; /* Azul */
+}
+
+.btn-action.btn-secondary:hover {
+    background-color: #0056b3; /* Azul mais escuro */
+}
+/* --- FIM DAS ATUALIZAÇÕES --- */
+
 
 /* Layout do Dashboard */
 .dashboard {
@@ -93,15 +110,15 @@ body {
     height: 500px; 
 }
 
-/* --- ESTILOS DA LEGENDA ADICIONADOS AQUI --- */
+/* Estilos da Legenda */
 .grafico-legenda {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
-    gap: 10px 20px; /* Espaçamento vertical e horizontal */
+    flex-wrap: wrap;
+    gap: 10px 20px;
     margin-top: 25px;
     padding-top: 20px;
-    border-top: 1px solid #e9ecef; /* Linha separadora sutil */
+    border-top: 1px solid #e9ecef;
 }
 
 .legenda-item {
@@ -114,12 +131,10 @@ body {
 .legenda-cor {
     width: 14px;
     height: 14px;
-    border-radius: 50%; /* Bolinha colorida */
+    border-radius: 50%;
     margin-right: 8px;
-    flex-shrink: 0; /* Impede que a bolinha encolha */
+    flex-shrink: 0;
 }
-/* --- FIM DOS ESTILOS DA LEGENDA --- */
-
 
 /* Botão de Voltar */
 .voltar {
@@ -141,7 +156,7 @@ body {
     color: white;
 }
 
-/* --- ESTILOS DO FOOTER --- */
+/* Estilos do Footer */
 footer {
     width: 100%;
     padding: 0.5rem 1rem;

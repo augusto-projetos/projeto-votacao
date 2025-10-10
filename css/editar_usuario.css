@@ -12,15 +12,15 @@ body {
     padding: 20px;
 }
 
-/* Estilo do formulário como um card (reutilizado) */
-.form-add-grupo {
+/* Estilo do formulário como um card */
+.form-edit-user {
     background-color: #ffffff;
     padding: 30px 40px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* Mensagem de erro (reutilizado) */
+/* Mensagem de erro */
 .form-message.error {
     padding: 15px;
     margin-bottom: 25px;
@@ -32,7 +32,7 @@ body {
     color: #721c24;
 }
 
-/* Agrupamento de label e input (reutilizado) */
+/* Agrupamento de label e input */
 .form-group {
     margin-bottom: 25px;
 }
@@ -44,8 +44,8 @@ body {
     margin-bottom: 8px;
 }
 
+/* Estilo padrão para os campos de formulário */
 .form-group input[type="text"],
-.form-group textarea,
 .form-group select {
     width: 100%;
     padding: 12px;
@@ -56,22 +56,17 @@ body {
 }
 
 .form-group input[type="text"]:focus,
-.form-group textarea:focus,
 .form-group select:focus {
     outline: none;
     border-color: #004080;
     box-shadow: 0 0 5px rgba(0, 64, 128, 0.3);
 }
 
-/* --- ESTILOS PARA A PÁGINA DE EDIÇÃO --- */
-
-/* Estilo para a pré-visualização da imagem atual */
-.imagem-preview {
-    max-width: 200px;
-    height: auto;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    margin-top: 5px;
+/* Estilo para o campo CPF desativado, para deixar claro que não é editável */
+.form-group input[disabled] {
+    background-color: #e9ecef; /* Fundo cinza claro */
+    cursor: not-allowed;       /* Ícone de cursor de "não permitido" */
+    color: #6c757d;            /* Cor do texto mais suave */
 }
 
 /* Container para os botões de ação (Salvar e Excluir) */
@@ -99,7 +94,6 @@ body {
     text-decoration: underline;
 }
 
-
 /* Estilo base dos botões */
 .btn {
     padding: 12px 25px;
@@ -121,17 +115,15 @@ body {
     background-color: #007bff; /* Azul para "Salvar" */
     color: white;
 }
-
 .btn-primary:hover {
     background-color: #0056b3;
 }
 
-/* Botão de Perigo (Excluir) */
+/* Botão de Perigo (Remover) */
 .btn-danger {
     background-color: #dc3545; /* Vermelho */
     color: white;
 }
-
 .btn-danger:hover {
     background-color: #c82333;
 }
@@ -142,12 +134,11 @@ body {
         margin: 20px auto;
         padding: 10px;
     }
-
-    .form-add-grupo {
+    .form-edit-user {
         padding: 20px;
     }
 
-    /* Empilha os botões em telas menores */
+    /* Empilha os botões em telas menores para melhor usabilidade */
     .form-actions-edit {
         flex-direction: column;
         gap: 15px;

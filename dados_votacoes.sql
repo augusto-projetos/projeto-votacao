@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 08-Out-2025 às 02:22
--- Versão do servidor: 10.4.24-MariaDB
--- versão do PHP: 8.1.6
+-- Tempo de geração: 10/10/2025 às 22:48
+-- Versão do servidor: 10.4.32-MariaDB
+-- Versão do PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `grupos`
+-- Estrutura para tabela `grupos`
 --
 
 CREATE TABLE `grupos` (
@@ -33,24 +33,25 @@ CREATE TABLE `grupos` (
   `descricao` text DEFAULT NULL,
   `imagem` varchar(255) DEFAULT NULL,
   `categoria` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `usuarios`
+-- Estrutura para tabela `usuarios`
 --
 
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
   `nome` varchar(100) NOT NULL,
-  `cpf` varchar(14) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `cpf` varchar(14) NOT NULL,
+  `is_admin` tinyint(1) NOT NULL DEFAULT 0 COMMENT '0 = usuário normal, 1 = administrador'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `votos`
+-- Estrutura para tabela `votos`
 --
 
 CREATE TABLE `votos` (
@@ -59,32 +60,32 @@ CREATE TABLE `votos` (
   `nome_grupo` varchar(100) NOT NULL,
   `categoria_grupo` varchar(100) NOT NULL,
   `data_voto` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices para tabela `grupos`
+-- Índices de tabela `grupos`
 --
 ALTER TABLE `grupos`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `usuarios`
+-- Índices de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`);
 
 --
--- Índices para tabela `votos`
+-- Índices de tabela `votos`
 --
 ALTER TABLE `votos`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT para tabelas despejadas
 --
 
 --

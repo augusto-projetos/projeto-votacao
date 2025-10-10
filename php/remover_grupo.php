@@ -3,11 +3,10 @@ session_start();
 require 'conexao.php';
 
 // 1. VERIFICAÇÃO DE SEGURANÇA
-// Garante que apenas administradores autenticados possam executar este script.
-$cpf = $_SESSION['cpf'] ?? null;
-$admins = $_SESSION['admins'] ?? [];
-if (!$cpf || !in_array($cpf, $admins)) {
-    die("Acesso negado.");
+if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
+    // Se a sessão de admin não existir ou não for verdadeira, nega o acesso.
+    header("Location: ../index.php");
+    exit();
 }
 
 // Garante que a requisição seja feita via POST para maior segurança.
