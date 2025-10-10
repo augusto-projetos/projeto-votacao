@@ -1,0 +1,237 @@
+/* CPF no topo */
+#headerCpf {
+    margin-left: 100px;
+    font-size: 0.8em;
+    color: white;
+}
+
+/* --- ESTILOS DO TÍTULO E BOTÃO SAIR --- */
+
+/* Container para alinhar o título e o botão */
+.titulo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espaço entre o título e o botão */
+    margin-bottom: 40px;
+    position: relative; /* Contexto para posicionamento em telas menores */
+}
+
+/* Título principal */
+.titulo-principal {
+    font-size: 2.2em;
+    color: #004080;
+    margin: 0; /* Remove margens para o flexbox controlar */
+}
+
+/* Botão Sair - Discreto e funcional */
+.btn-sair {
+    display: inline-block;
+    padding: 8px 16px;
+    border: 2px solid #ced4da; /* Borda cinza clara */
+    color: #6c757d; /* Texto cinza escuro */
+    text-decoration: none;
+    border-radius: 20px; /* Formato de pílula */
+    font-weight: bold;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+    white-space: nowrap; /* Impede que o texto quebre */
+}
+
+.btn-sair:hover {
+    background-color: #f1f3f5; /* Fundo sutil ao passar o mouse */
+    border-color: #adb5bd;
+}
+
+/* --- FIM DOS NOVOS ESTILOS --- */
+
+
+/* Por padrão, o filtro de navegação é invisível em telas grandes */
+.categoria-filtro-wrapper {
+    display: none;
+}
+
+/* GRID de 4 colunas para categorias */
+.categorias-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 0 10px;
+}
+
+/* Cada coluna (categoria) */
+.categoria-coluna {
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* Nome da categoria */
+.categoria-coluna h2 {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #004080;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+/* Lista de grupos dentro da categoria */
+.grupos-coluna {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Cartão de grupo */
+.grupo-card {
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.grupo-card:hover {
+    box-shadow: 0 0 10px rgba(0, 64, 128, 0.3);
+}
+
+.grupo-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    max-height: 120px;
+    object-fit: cover;
+}
+
+.grupo-card h3 {
+    font-size: 1.1em;
+    margin: 5px 0;
+}
+
+.grupo-card p {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.grupo-card button {
+    padding: 8px 12px;
+    background-color: #004080;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95em;
+    transition: background-color 0.3s;
+}
+
+.grupo-card button:hover {
+    background-color: #0075eb;
+}
+
+/* Estilo para o Aviso Final */
+.aviso-final {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    text-align: center;
+}
+.aviso-final h2 {
+    color: #004080;
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+.aviso-final p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+.aviso-final .btn-voltar {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #004080;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.aviso-final .btn-voltar:hover {
+    background-color: #0059b3;
+    transform: translateY(-2px);
+}
+
+
+/* --- SEÇÃO DE RESPONSIVIDADE ATUALIZADA --- */
+@media (max-width: 1200px) {
+    .categorias-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    /* Filtro de Categoria Visível Apenas em Telas Menores */
+    .categoria-filtro-wrapper {
+        display: block;
+        max-width: 500px;
+        margin: 0 auto 40px auto;
+        text-align: center;
+    }
+    .categoria-filtro-wrapper label {
+        display: block;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+    }
+    #filtro-categoria {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+        border: 2px solid #004080;
+        border-radius: 8px;
+        background-color: #fff;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 1rem center;
+        background-size: 1em;
+        cursor: pointer;
+    }
+    
+    .categorias-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .grupo-card img {
+        max-height: 100px;
+    }
+    .grupo-card button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 520px) { /* Ponto de quebra menor para o título */
+    /* Empilha o título e o botão para melhor visualização */
+    .titulo-wrapper {
+        flex-direction: column;
+        gap: 15px; /* Espaço vertical quando empilhado */
+    }
+
+    .titulo-principal {
+        font-size: 1.8em;
+    }
+
+    .categorias-grid {
+        grid-template-columns: 1fr;
+    }
+}

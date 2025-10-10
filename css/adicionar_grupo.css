@@ -1,0 +1,170 @@
+/* Reset Básico e Fonte */
+body {
+    background-color: #f0f2f5;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #333;
+}
+
+/* Container principal para centralizar o formulário */
+.container {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* Estilo do formulário como um card */
+.form-add-grupo {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== NOVO ESTILO PARA AS MENSAGENS DE FEEDBACK ===== */
+.form-message {
+    padding: 15px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid transparent;
+}
+
+.form-message.error {
+    background-color: #f8d7da; /* Fundo vermelho claro */
+    color: #721c24;           /* Texto vermelho escuro */
+    border-color: #f5c6cb;
+}
+/* ======================================================= */
+
+
+/* Agrupamento de label e input */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: #1c3d5a;
+    margin-bottom: 8px;
+}
+
+/* Estilo padrão para os campos de formulário */
+.form-group input[type="text"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #004080;
+    box-shadow: 0 0 5px rgba(0, 64, 128, 0.3);
+}
+
+/* ===== ESTILOS PARA O INPUT DE ARQUIVO PERSONALIZADO ===== */
+.file-upload-wrapper input[type="file"] {
+    display: none;
+}
+.file-upload-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.file-upload-label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #005ebd;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.file-upload-label:hover {
+    background-color: #0073e6;
+}
+.file-upload-filename {
+    font-style: italic;
+    color: #555;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/* ======================================================= */
+
+
+/* Container para os botões de ação */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 20px;
+}
+
+/* Estilo base dos botões */
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Botão primário (Salvar) */
+.btn-primary {
+    background-color: #28a745;
+    color: white;
+}
+.btn-primary:hover {
+    background-color: #218838;
+}
+
+/* Botão secundário (Cancelar) */
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .container {
+        margin: 20px auto;
+        padding: 10px;
+    }
+    .form-add-grupo {
+        padding: 20px;
+    }
+    .form-actions {
+        flex-direction: column-reverse;
+    }
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+    .file-upload-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}

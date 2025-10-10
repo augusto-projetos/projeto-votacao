@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+/* --- CABEÇALHO --- */
+
+/* Base (Mobile) */
+header {
+    display: flex;
+    flex-direction: column; /* Empilha os itens verticalmente em telas pequenas */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 0.75rem; /* Espaçamento entre os itens */
+    width: 100%;
+    background: linear-gradient(220deg, rgba(70, 130, 180, 1) 0%, rgba(61, 61, 61, 1) 100%);
+    padding: 1rem;
+    color: white;
+}
+
+header h1 {
+    font-size: 1.3em; /* Tamanho de fonte menor para mobile */
+    order: 1; /* Ordem do título */
+}
+
+#logo {
+    width: auto;
+    height: 80px; /* Logo menor para mobile */
+    mix-blend-mode: multiply; /* Mantém seu efeito de mistura */
+    order: 2; /* Ordem do logo */
+}
+
+#headerCpf {
+    order: 3; /* Ordem do CPF */
+    font-size: 0.9em;
+}
+
+/* --- ESTILOS DO FOOTER --- */
+footer {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    background: #2c2c2c;   /* Um pouco mais claro que o preto total */
+    color: #a0a0a0;     /* Texto mais suave */
+    text-align: center;
+    border-top: 3px solid #4682B4; /* Borda um pouco mais fina */
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0.25rem 0; /* Margem entre as linhas foi reduzida */
+    font-size: 0.85rem; /* Tamanho da fonte foi reduzido */
+    line-height: 1.4;
+}
+
+footer #feat {
+    font-size: 0.5rem;
+}
+
+footer strong {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* --- AJUSTES PARA TELAS MAIORES (TABLETS E DESKTOPS) --- */
+@media (min-width: 768px) {
+    header {
+        flex-direction: row; /* Itens lado a lado em telas maiores */
+        justify-content: center;
+        padding: 0.5rem 2rem;
+        gap: 2rem; /* Aumenta o espaçamento */
+    }
+
+    header h1 {
+        font-size: 1.8em; /* Restaura o tamanho maior da fonte */
+        order: 1; /* Mantém a ordem */
+    }
+
+    #logo {
+        height: 100px; /* Aumenta o logo */
+        order: 2; /* Mantém a ordem */
+    }
+
+    #headerCpf {
+        font-size: 1em;
+        order: 3;
+    }
+}

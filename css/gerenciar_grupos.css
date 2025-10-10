@@ -1,0 +1,183 @@
+/* Reset Básico e Fonte */
+body {
+    background-color: #f0f2f5;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #333;
+}
+
+/* Container principal */
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+/* Container para os botões de ação no topo da página */
+.page-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+/* Estilo base para botões na página */
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    color: white;
+    text-align: center;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Botão de Adicionar (Verde) */
+.btn-add {
+    background-color: #28a745;
+}
+.btn-add:hover {
+    background-color: #218838;
+}
+
+/* Botão Secundário (Cinza) */
+.btn-secondary {
+    background-color: #6c757d;
+}
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* Botão de Editar (Azul) */
+.btn-edit {
+    background-color: #007bff;
+}
+.btn-edit:hover {
+    background-color: #0056b3;
+}
+
+
+/* Estilo para as caixas de alerta (sucesso, info) */
+.alert {
+    padding: 15px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid transparent;
+}
+
+.alert.success {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+.alert.info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border-color: #bee5eb;
+}
+
+/* Seção de cada categoria */
+.categoria-section {
+    margin-bottom: 40px;
+}
+
+/* Título da categoria */
+.categoria-titulo {
+    font-size: 1.8rem;
+    color: #1c3d5a;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Lista de grupos */
+.grupo-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Item individual do grupo (formato de card) */
+.grupo-item {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    transition: box-shadow 0.3s;
+}
+
+.grupo-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Imagem do grupo */
+.grupo-imagem {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 20px;
+    flex-shrink: 0; /* Impede que a imagem encolha */
+}
+
+/* Informações do grupo (nome e descrição) */
+.grupo-info {
+    flex-grow: 1; /* Faz esta div ocupar o espaço restante */
+}
+
+.grupo-nome {
+    margin: 0 0 5px 0;
+    font-size: 1.2rem;
+    color: #004080;
+}
+
+.grupo-descricao {
+    margin: 0;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+/* Ações do grupo (botão de editar) */
+.grupo-actions {
+    margin-left: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .grupo-item {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .grupo-imagem {
+        width: 100%;
+        height: 150px; /* Altura maior para a imagem em tela pequena */
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .grupo-actions {
+        margin-left: 0;
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    .btn-edit {
+        width: 100%;
+    }
+}
