@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
         'Logística': '#FBBC05',
         'Estética': '#E91E63',
         'Beleza': '#9C27B0',
+        'Enfermagem': '#EA4335',
         'Turismo': '#FF9800',
         'Segurança do Trabalho': '#607D8B',
         'Informática': '#34A853',

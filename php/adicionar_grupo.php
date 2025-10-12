@@ -10,13 +10,14 @@ if (!isset($_SESSION['is_admin']) || $_SESSION['is_admin'] !== true) {
 
 // Lista de categorias disponíveis
 $categorias = [
-    "Administração",
-    "Logística",
-    "Estética",
-    "Beleza",
-    "Turismo",
-    "Segurança do Trabalho",
-    "Informática"
+    'Administração',
+    'Logística',
+    'Estética',
+    'Beleza',
+    'Enfermagem',
+    'Turismo',
+    'Segurança do Trabalho',
+    'Informática'
 ];
 
 // --- LÓGICA ADICIONADA PARA TRATAR MENSAGENS DE ERRO ---

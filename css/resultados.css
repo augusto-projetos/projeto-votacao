@@ -1,0 +1,144 @@
+/* Reset Básico e Fonte */
+body {
+    background-color: #f0f2f5;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: #333;
+}
+
+/* Container principal */
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+.titulo-principal {
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 40px;
+    color: #1c3d5a;
+}
+
+/* Card do Vencedor */
+.winner-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-top: 5px solid #FBBC05; /* Dourado para destacar */
+}
+
+.winner-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 15px auto;
+    color: #FBBC05; /* Dourado */
+}
+
+.winner-card h2 {
+    font-size: 1.5rem;
+    color: #555;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.winner-name {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #1c3d5a;
+    margin: 5px 0;
+}
+
+.winner-votes {
+    font-size: 1.1rem;
+    color: #555;
+    margin-top: 10px;
+}
+
+.winner-votes strong {
+    color: #1c3d5a;
+}
+
+/* Container do Gráfico */
+.chart-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+}
+
+.chart-container h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #1c3d5a;
+    font-size: 1.5rem;
+}
+
+.chart-wrapper {
+    position: relative;
+    height: 500px; 
+}
+
+.grafico-legenda {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #e9ecef;
+}
+
+.legenda-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.legenda-cor {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+/* Botão de Voltar */
+.btn-voltar {
+    display: block;
+    width: fit-content;
+    margin: 40px auto 0;
+    text-align: center;
+    color: #004080;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 2px solid #004080;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-voltar:hover {
+    background-color: #004080;
+    color: white;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .winner-name {
+        font-size: 1.5rem;
+    }
+
+    .chart-wrapper {
+        height: 400px; /* Reduz altura em telas pequenas */
+    }
+}

@@ -30,6 +30,10 @@ date_default_timezone_set('America/Sao_Paulo');
 
                 <button id="btn-form">Enviar</button>
             </form>
+
+            <div class="resultados-link-wrapper">
+                <a href="php/resultados.php" class="btn-resultados">Ver Resultados</a>
+            </div>
         </div>
 
         <script src="js/index.js"></script>
